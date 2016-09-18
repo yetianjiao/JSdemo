@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>jsdemo</display-name>
+	
+	<!-- springmvc前端控制器 -->
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- 通过contextConfigLocation来配置springmvc所需要加载的配置文件，
+			  包括处理器映射器，适配器等等 
+			  如果不配置该参数，则默认加载/WEB-INF/servlet名称-servlet.xml，即：springmvc-servlet.xml -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:springmvc.xml</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<!-- 以.action结尾的都以DispatherServlet进行解析 -->
+		<url-pattern>*.action</url-pattern>
+	</servlet-mapping>
+	
+<!-- 直接访问jsp的配置-->
+	<servlet>
+	<servlet-name>jsdemo1</servlet-name>
+	<!-- 在server下只能通过url访问jsp下的test2.jsp文件 -->
+	<jsp-file>/WEB-INF/jsp/test1.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jsdemo1</servlet-name>
+		<url-pattern>/test1.jsp</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>jsdemo2</servlet-name>
+	<!-- 在server下只能通过url访问jsp下的test2.jsp文件 -->
+	<jsp-file>/WEB-INF/jsp/test2.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jsdemo2</servlet-name>
+		<url-pattern>/test2.jsp</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>jsdemo3</servlet-name>
+	<jsp-file>/WEB-INF/jsp/test3.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jsdemo3</servlet-name>
+		<url-pattern>/test3.jsp</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>jsdemo4</servlet-name>
+	<jsp-file>/WEB-INF/jsp/test4.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jsdemo4</servlet-name>
+		<url-pattern>/test4.jsp</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>jsdemo5</servlet-name>
+	<jsp-file>/WEB-INF/jsp/test5.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jsdemo5</servlet-name>
+		<url-pattern>/test5.jsp</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>jsdemo6</servlet-name>
+	<jsp-file>/WEB-INF/jsp/test6.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jsdemo6</servlet-name>
+		<url-pattern>/test6.jsp</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>jsdemo7</servlet-name>
+		<jsp-file>/WEB-INF/jsp/test7.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jsdemo7</servlet-name>
+		<url-pattern>/test7.jsp</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>formtest1</servlet-name>
+		<jsp-file>/WEB-INF/jsp/formtest1.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>formtest1</servlet-name>
+		<url-pattern>/formtest1.jsp</url-pattern>
+	</servlet-mapping>
+</web-app>
