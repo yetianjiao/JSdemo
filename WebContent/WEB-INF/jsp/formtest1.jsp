@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>js导航菜单</title>
-<!-- 对于引用js和css的时候，是否需要添加网络url地址？
+<!-- 对于引用js和css的时候，是否需要添加网络url地址？有点确认
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/cssform1.css">
 or
 <link rel="stylesheet" href="css/cssform1.css">
@@ -17,7 +17,8 @@ or
 <form action="gotoLocation.action" class="centered">
 	<select id="newLocation">
 		<option selected>select a test</option>
-		<option value="${pageContext.request.contextPath }/test1.jsp">test1</option>
+		<!-- 使用浏览器，跳转的时候实际是不需要${pageContext.request.contextPath }的，-->
+		<option value="test1.jsp">test1</option>
 		<option value="${pageContext.request.contextPath }/test2.jsp">test2</option>
 		<option value="${pageContext.request.contextPath }/test3.jsp">test3</option>
 		<option value="${pageContext.request.contextPath }/test4.jsp">test4</option>
